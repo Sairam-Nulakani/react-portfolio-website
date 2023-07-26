@@ -3,7 +3,7 @@ header {
   padding-top: 7rem;
   overflow: hidden;
 }
-.header_container {
+.header__container {
   text-align: center;
   height: 100%;
   position: relative;
@@ -35,7 +35,8 @@ header {
   width: 22rem;
   height: 30rem;
   position: absolute;
-  left: calc(35.5%);
+  left: calc(50%);
+  transform: translateX(-50%);
   margin-top: 4rem;
   border-radius: 12rem 12rem 0 0;
   overflow: hidden;
@@ -46,5 +47,21 @@ header {
   right: -2.3rem;
   bottom: 5rem;
   transform: rotate(90deg);
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+}
+@media only screen and (max-width: 1024px) {
+  header {
+    height: 68vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    height: 100vh;
+  }
+  .header__socials,
+  .scroll_down {
+    display: none;
+  }
 }
