@@ -91,6 +91,7 @@ a:hover {
 .btn-primary {
   background: var(--color-primary);
   color: var(--color-bg);
+  font-size: 1.1rem;
 }
 img {
   display: block;

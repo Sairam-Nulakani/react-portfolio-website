@@ -1,6 +1,6 @@
-.experience__section {
+/* .experience__section {
   padding-top: 7rem;
-}
+} */
 .experience__container {
   display: grid;
   grid-template-columns: 1fr 1fr;
