@@ -50,6 +50,9 @@ header {
   font-size: 1rem;
   font-weight: 300;
 }
+.social__icon:hover {
+  transform: scale(1.3);
+}
 @media only screen and (max-width: 1024px) {
   header {
     height: 68vh;
@@ -61,7 +64,7 @@ header {
     height: 100vh;
   }
   .header__socials,
-  .scroll_down {
+  .scroll__down {
     display: none;
   }
 }
