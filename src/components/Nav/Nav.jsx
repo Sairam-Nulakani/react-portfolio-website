@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./nav.css";
 import {
   AiOutlineHome,
@@ -12,20 +13,23 @@ const Nav = () => {
   const [activeNav, setActiveNav] = useState("#");
   return (
     <nav>
-      <a
-        href="#"
-        onClick={() => setActiveNav("#")}
-        className={activeNav === "#" ? "active" : ""}
-      >
-        <AiOutlineHome />
-      </a>
-      <a
-        href="#about"
-        onClick={() => setActiveNav("#about")}
-        className={activeNav === "#about" ? "active" : ""}
-      >
-        <AiOutlineUser />
-      </a>
+      <Link to="/home/about">
+        <a
+          onClick={() => setActiveNav("#")}
+          className={activeNav === "#" ? "active" : ""}
+        >
+          <AiOutlineHome />
+        </a>
+      </Link>
+      <Link>
+        <a
+          href="#about"
+          onClick={() => setActiveNav("#about")}
+          className={activeNav === "#about" ? "active" : ""}
+        >
+          <AiOutlineUser />
+        </a>
+      </Link>
       <a
         href="#experience"
         onClick={() => setActiveNav("#experience")}

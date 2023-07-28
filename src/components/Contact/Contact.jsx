@@ -31,9 +31,24 @@ const data = [
 const Contact = () => {
   const [isMessageSent, setIsMessageSent] = useState(false);
   const form = useRef();
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+    validationSchema: Yup.object({
+      name: Yup.string()
+        .max(25, "Name must be 3-20 Characters")
+        .required("Name is required"),
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("Email is required"),
+      message: Yup.string().required("Message is required"),
+    }),
+  });
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
         "service_6obk68r",
@@ -52,22 +67,7 @@ const Contact = () => {
     e.target.reset();
     setIsMessageSent(true);
   };
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
-    validationSchema: Yup.object({
-      name: Yup.string()
-        .max(25, "Name must be 3-20 Characters")
-        .required("Name is required"),
-      email: Yup.string()
-        .email("Invalid email address")
-        .required("Email is required"),
-      message: Yup.string().required("Message is required"),
-    }),
-  });
+
   return (
     <section id="contact">
       <h5>Get In Touch</h5>

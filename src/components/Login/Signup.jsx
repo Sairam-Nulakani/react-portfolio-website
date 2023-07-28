@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import "./signup.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import Login from "./Login";
 const submitHandler = () => {};
 
 const Signup = () => {

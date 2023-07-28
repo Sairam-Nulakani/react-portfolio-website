@@ -1,7 +1,8 @@
 import React from "react";
 import "./portfolio.css";
-import IMG1 from "../../assets/image1.png";
+import IMG1 from "../../assets/Banner-16.webp";
 import IMG2 from "../../assets/food-delivery.png";
+import IMG3 from "../../assets/unnamed.png";
 
 const Portfolio = () => {
   const data = [
@@ -21,7 +22,7 @@ const Portfolio = () => {
     },
     {
       id: 3,
-      image: IMG1,
+      image: IMG3,
       title: "Resume Builder App",
       github: "https://github.com/Sairam-Nulakani?tab=repositories",
       demo: "https://github.com/Sairam-Nulakani?tab=repositories",
