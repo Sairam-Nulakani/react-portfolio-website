@@ -1,26 +1,27 @@
 import React from "react";
 import "./portfolio.css";
-import ECOM from "../../assets/e-commerce.webp";
+import IMG1 from "../../assets/image1.png";
+import IMG2 from "../../assets/food-delivery.png";
 
 const Portfolio = () => {
   const data = [
     {
       id: 1,
-      image: ECOM,
+      image: IMG1,
       title: "E-Commerce Website",
       github: "https://github.com/Sairam-Nulakani?tab=repositories",
       demo: "https://github.com/Sairam-Nulakani?tab=repositories",
     },
     {
       id: 2,
-      image: ECOM,
+      image: IMG2,
       title: "Food Order App",
       github: "https://github.com/Sairam-Nulakani?tab=repositories",
       demo: "https://github.com/Sairam-Nulakani?tab=repositories",
     },
     {
       id: 3,
-      image: ECOM,
+      image: IMG1,
       title: "Resume Builder App",
       github: "https://github.com/Sairam-Nulakani?tab=repositories",
       demo: "https://github.com/Sairam-Nulakani?tab=repositories",
