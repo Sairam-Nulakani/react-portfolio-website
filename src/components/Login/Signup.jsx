@@ -111,9 +111,9 @@ const Signup = () => {
         {formik.touched.confirmPassword && formik.errors.confirmPassword && (
           <span>{formik.errors.confirmPassword}</span>
         )}
-        <span>
+        <p>
           Already Registered ? <Link to="/login">Sign-in</Link>
-        </span>
+        </p>
         <button className="btn btn-primary" type="submit">
           Sign up
         </button>

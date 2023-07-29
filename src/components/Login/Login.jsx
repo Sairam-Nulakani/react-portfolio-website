@@ -47,6 +47,9 @@ const Login = () => {
         {formik.touched.password && formik.errors.password && (
           <span>{formik.errors.password}</span>
         )}
+        <p>
+          Not Registered ?<Link to="/">Sign-Up</Link>
+        </p>
         <button className="btn btn-primary" type="submit">
           Login
         </button>
