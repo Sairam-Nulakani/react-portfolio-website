@@ -6,6 +6,7 @@ import emailjs from "emailjs-com";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { TiTick } from "react-icons/ti";
+import Nav from "../Nav/Nav";
 
 const data = [
   {
@@ -70,6 +71,7 @@ const Contact = () => {
 
   return (
     <section id="contact">
+      <Nav />
       <h5>Get In Touch</h5>
       <h2>Contact Me</h2>
       <div className="container contact__container">

@@ -4,10 +4,12 @@ import AboutMe from "../../assets/About_Sairam.jpg";
 import { FaAward } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
 import { VscFolderLibrary } from "react-icons/vsc";
+import Nav from "../Nav/Nav";
 
 const About = () => {
   return (
     <section id="about" className="about__section">
+      <Nav />
       <h5>Get To Know</h5>
       <h2>About Me</h2>
       <div className="container about__container">

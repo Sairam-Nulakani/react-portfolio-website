@@ -1,10 +1,12 @@
 import React from "react";
 import "./experience.css";
 import { BsPatchCheckFill } from "react-icons/bs";
+import Nav from "../Nav/Nav";
 
 const Experience = () => {
   return (
     <section id="experience" className="experience__section">
+      <Nav />
       <h5>What Skills I Have</h5>
       <h2>My Experience</h2>
       <div className="container experience__container">

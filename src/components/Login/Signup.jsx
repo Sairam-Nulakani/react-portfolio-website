@@ -2,8 +2,9 @@ import React, { useRef, useState } from "react";
 import "./signup.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-const submitHandler = () => {};
+import { Link } from "react-router-dom";
 
+const submitHandler = () => {};
 const Signup = () => {
   const formik = useFormik({
     initialValues: {
@@ -110,6 +111,9 @@ const Signup = () => {
         {formik.touched.confirmPassword && formik.errors.confirmPassword && (
           <span>{formik.errors.confirmPassword}</span>
         )}
+        <span>
+          Already Registered ? <Link to="/login">Sign-in</Link>
+        </span>
         <button className="btn btn-primary" type="submit">
           Sign up
         </button>

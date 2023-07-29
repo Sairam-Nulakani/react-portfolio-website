@@ -10,47 +10,51 @@ import { BiBook } from "react-icons/bi";
 import { RiServiceLine } from "react-icons/ri";
 
 const Nav = () => {
-  const [activeNav, setActiveNav] = useState("#");
+  const [activeLink, setActiveLink] = useState("home");
   return (
     <nav>
-      <Link to="/home/about">
-        <a
-          onClick={() => setActiveNav("#")}
-          className={activeNav === "#" ? "active" : ""}
-        >
+      <Link
+        to="/home"
+        onClick={() => setActiveLink("home")}
+        className={activeLink === "home" ? "active" : ""}
+      >
+        <a>
           <AiOutlineHome />
         </a>
       </Link>
-      <Link>
-        <a
-          href="#about"
-          onClick={() => setActiveNav("#about")}
-          className={activeNav === "#about" ? "active" : ""}
-        >
+      <Link
+        to="/home/about"
+        onClick={() => setActiveLink("about")}
+        className={activeLink === "about" ? "active" : ""}
+      >
+        <a>
           <AiOutlineUser />
         </a>
       </Link>
-      <a
-        href="#experience"
-        onClick={() => setActiveNav("#experience")}
-        className={activeNav === "#experience" ? "active" : ""}
-      >
-        <BiBook />
-      </a>
-      <a
-        href="#portfolio"
-        onClick={() => setActiveNav("#portfolio")}
-        className={activeNav === "#portfolio" ? "active" : ""}
-      >
-        <RiServiceLine />
-      </a>
-      <a
-        href="#contact"
-        onClick={() => setActiveNav("#contact")}
-        className={activeNav === "#contact" ? "active" : ""}
-      >
-        <AiOutlineContacts />
-      </a>
+      <Link to="/home/experience">
+        <a
+          onClick={() => setActiveLink("/experience")}
+          className={activeLink === "/experience" ? "active" : ""}
+        >
+          <BiBook />
+        </a>
+      </Link>
+      <Link to="/home/portfolio">
+        <a
+          onClick={() => setActiveLink("/portfolio")}
+          className={activeLink === "/portfolio" ? "active" : ""}
+        >
+          <RiServiceLine />
+        </a>
+      </Link>
+      <Link to="/home/contact">
+        <a
+          onClick={() => setActiveLink("/contact")}
+          className={activeLink === "/contact" ? "active" : ""}
+        >
+          <AiOutlineContacts />
+        </a>
+      </Link>
     </nav>
   );
 };

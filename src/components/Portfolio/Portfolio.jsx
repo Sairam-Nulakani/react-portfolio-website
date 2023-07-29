@@ -3,6 +3,7 @@ import "./portfolio.css";
 import IMG1 from "../../assets/Banner-16.webp";
 import IMG2 from "../../assets/food-delivery.png";
 import IMG3 from "../../assets/unnamed.png";
+import Nav from "../Nav/Nav";
 
 const Portfolio = () => {
   const data = [
@@ -30,6 +31,7 @@ const Portfolio = () => {
   ];
   return (
     <section id="portfolio">
+      <Nav />
       <h5>Portfolio</h5>
       <h2>My Recent Work</h2>
       <div className="container portfolio__container">

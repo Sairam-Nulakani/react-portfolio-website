@@ -105,6 +105,9 @@ img {
   section {
     margin-top: 6rem;
   }
+  nav {
+    display: none;
+  }
 }
 @media only screen and(max-width : 600px) {
   .container {
