@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
@@ -16,6 +16,12 @@ const Login = () => {
       password: Yup.string().max(10).required("Password is Required"),
     }),
   });
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("Sairam"));
+    console.log(data);
+  }, []);
+
+  const handleSubmit = () => {};
   return (
     <section>
       <h2>Login-Form</h2>
@@ -50,7 +56,11 @@ const Login = () => {
         <p>
           Not Registered ?<Link to="/">Sign-Up</Link>
         </p>
-        <button className="btn btn-primary" type="submit">
+        <button
+          className="btn btn-primary"
+          type="submit"
+          onSubmit={handleSubmit}
+        >
           Login
         </button>
       </form>
