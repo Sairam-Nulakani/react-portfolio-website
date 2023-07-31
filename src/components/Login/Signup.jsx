@@ -1,11 +1,10 @@
-import React, { useRef, useState } from "react";
 import "./signup.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const submitHandler = () => {};
 const Signup = () => {
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -24,7 +23,7 @@ const Signup = () => {
       email: Yup.string()
         .email("Invalid Email Address")
         .required("Email is Required"),
-      password: Yup.string().max(10).required("Password is Required"),
+      password: Yup.string().max(15).required("Password is Required"),
       confirmPassword: Yup.string()
         .oneOf([Yup.ref("password"), null], "Passwords must match")
         .required("Please confirm your password"),
@@ -32,10 +31,11 @@ const Signup = () => {
     onSubmit: async (values, { resetForm }) => {
       try {
         if (formik.values.password === formik.values.confirmPassword) {
-          localStorage.setItem(`${values.name}`, JSON.stringify(values));
+          localStorage.setItem("data", JSON.stringify(values));
+          localStorage.setItem("signUp", "true");
 
           alert("Signup Successfully");
-          resetForm();
+          navigate("/login");
         } else {
         }
       } catch (err) {

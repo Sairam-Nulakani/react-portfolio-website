@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const data = JSON.parse(localStorage.getItem("data"));
+  const signUp = JSON.parse(localStorage.getItem("signUp"));
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -13,15 +16,30 @@ const Login = () => {
       email: Yup.string()
         .email("Invalid Email Address")
         .required("Email is Required"),
-      password: Yup.string().max(10).required("Password is Required"),
+      password: Yup.string().max(15).required("Password is Required"),
     }),
+    onSubmit: async (values, { resetForm }) => {
+      try {
+        useEffect(() => {
+          if (
+            values.email === data.email &&
+            values.password === data.password
+          ) {
+            navigate("/home");
+          } else if (data === null) {
+            alert("you are not registered with this email");
+          } else {
+            console.log("test");
+            // alert("Please Enter Valid Credentials"); // <-- It might be better to remove this alert and handle the validation message within the form itself.
+            resetForm();
+          }
+        }, [values, data]);
+      } catch (err) {
+        console.log(err);
+      }
+    },
   });
-  useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("Sairam"));
-    console.log(data);
-  }, []);
 
-  const handleSubmit = () => {};
   return (
     <section>
       <h2>Login-Form</h2>
@@ -42,7 +60,7 @@ const Login = () => {
           <span>{formik.errors.email}</span>
         )}
         <input
-          type="text"
+          type="password"
           placeholder="Enter Your Password"
           className="signup__input"
           name="password"
@@ -56,11 +74,7 @@ const Login = () => {
         <p>
           Not Registered ?<Link to="/">Sign-Up</Link>
         </p>
-        <button
-          className="btn btn-primary"
-          type="submit"
-          onSubmit={handleSubmit}
-        >
+        <button className="btn btn-primary" type="submit">
           Login
         </button>
       </form>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./nav.css";
 import {
   AiOutlineHome,
@@ -8,9 +8,16 @@ import {
 } from "react-icons/ai";
 import { BiBook } from "react-icons/bi";
 import { RiServiceLine } from "react-icons/ri";
+import { IoMdLogOut } from "react-icons/io";
 
 const Nav = () => {
+  const navigate = useNavigate();
+  const [data, setData] = useState([]);
   const [activeLink, setActiveLink] = useState("home");
+  const handleLogout = () => {
+    navigate("/login");
+  };
+
   return (
     <nav>
       <Link
@@ -53,6 +60,11 @@ const Nav = () => {
           className={activeLink === "/contact" ? "active" : ""}
         >
           <AiOutlineContacts />
+        </a>
+      </Link>
+      <Link onClick={navigate("/login")}>
+        <a className={activeLink === "/contact" ? "active" : ""}>
+          <IoMdLogOut onClick={handleLogout} />
         </a>
       </Link>
     </nav>
